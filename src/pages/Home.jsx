@@ -30,28 +30,26 @@ export default function Home({socket, setCode, code, name, setName, setPlayers})
 
 function Body({name, setName, createGame, code}) {
     return (
-        <div>
-        <h3>
-            Welcome!
-        </h3>
-        <h4>
-        Please Create or Join Game
-        </h4>
-        <input 
-            placeholder = {name == "" ?'Enter Name' : name}
-            value={name}
-            onChange={(event) => {
-                setName(event.target.value);
-            }}
-        />
-        {/*This button will take user to new page that will show code and button to start game and who all have joined*/}
-        <button onClick={() => {createGame();}}>
-            {name !== "" ? <Link to="/lobby">Create Game</Link> : "Create Game"}
-        </button>
-        {/*This button will take user to new page that will show input field and button to join game -> Same as create game once joined*/}
-        <button>
-        {name !== "" ? <Link to="/join">Join Game</Link> : "Join Game"}
-        </button>
-    </div>
+        <div className='main-body'>
+            <div className='name-input-container'>
+                <input 
+                    placeholder = {name == "" ?'Nickname' : name}
+                    value={name}
+                    onChange={(event) => {
+                        setName(event.target.value);
+                    }}
+                    className='name-input'
+                />
+            </div>
+            <div className='homepage-buttons'>
+                <button onClick={() => {createGame();}}>
+                    {name !== "" ? <Link to="/lobby">Create Game</Link> : "Create Game"}
+                </button>
+                {/*This button will take user to new page that will show input field and button to join game -> Same as create game once joined*/}
+                <button>
+                {name !== "" ? <Link to="/join">Join Game</Link> : "Join Game"}
+                </button>
+            </div>
+        </div>
     )
 }
