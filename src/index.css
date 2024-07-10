@@ -6,7 +6,6 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,20 +15,28 @@
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
   background: #161c22;
 }
 
 .header {
-  font-family: Marker Felt, fantasy;
+  font-family: Marker Felt;
   font-weight: 800;
   font-size: 72px;
   color: #00FF00; /* Adjust the color to match the gradient */
-  background: linear-gradient(90deg, #ffffff 0%, #8B00FF 100%);
+  background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-top: 5rem;
+}
+
+.code {
+  font-family: Marker Felt, fantasy;
+  font-weight: 800;
+  font-size: 72px;
+  color: #ffffff;
+  margin-top: 5rem;
 }
 
 .main-body {
@@ -39,8 +46,8 @@ body {
   flex-direction: column;
 }
 
-.name-input-container {
-  background: rgb(101, 85, 191); /* Purple background #8068c0*/
+.text-input-container {
+  background: #4f5a66; /* Purple background #8068c0*/
   box-shadow: 0px 6px 50px rgb(0, 0, 0); /* Black shadow */
   opacity: 1;
   border-radius: 2rem; /* Rounded corners */
@@ -52,40 +59,51 @@ body {
   margin: 2rem;
 }
 
-.name-input {
+.text-input {
   width: 14rem;
   height: 3rem;
   background: transparent; /* Make input background transparent */
   border: none; /* Remove border */
-  color: #efefff; /* Light gray text */
+  color: #ffffff; /* Light gray text */
   font-size: 18px; /* Adjust font size */
   font-family: sans-serif;
   font-weight: 800;
   outline: none; /* Remove default outline */
-
 }
 
-.name-input::placeholder {
-  color: #a8a8b8; /* Light gray placeholder text */
+.text-input::placeholder {
+  color: #9a9a9a; /* Light gray placeholder text */
   opacity: 1; /* Ensure placeholder is visible */
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 1);
+  padding: 1em 1.2em;
   margin: 0.5em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  font-family: sans-serif;
+  background-color: #2f363d;
+  font-weight: 800;
   cursor: pointer;
   transition: border-color 0.25s;
   transition: background-color 0.5s;
+  color: white;
 }
 
 button:hover {
-  border-color: #646cff;
+  background-color: #272e34;
+}
+
+.default-button .link-button {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .ready {
@@ -108,20 +126,28 @@ button:hover {
   color: white;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.players-title {
+  font-weight: 600;
+  font-size: 36px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-top: 5rem;
+  color: #cdcdcd;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.player-list {
+  list-style-type: upper-roman;
+  list-style-position: inside;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+.player-list li {
+  margin-bottom: 5px;
+  font-size: 28px;
+  font-weight: bold; /* Makes the font bolder */
+  color: #cdcdcd; /* Adds a slight color to the text */
+  padding-right: 20px; /* Adds some padding for better alignment */
+  margin: 2rem;
+}
+
+
+

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Header from '../components/Header';
 
 export default function Join({socket, code, setCode, name, players, setPlayers}) {
     const [joinedGame, setJoinedGame] = useState(false);
@@ -34,19 +35,27 @@ export default function Join({socket, code, setCode, name, players, setPlayers})
     }
 
     return (
-        <div>
-        <input placeholder="Enter Code" 
-            onChange={(event) => {
-                setCode(event.target.value);
-            }}/>
-        <button  onClick={() => {joinGame()}}>
-            Join Game
-        </button>
-        <button>
-            <Link to={"/home"}>
-                Back
-            </Link>
-        </button>
+        <div className='main-body'>
+            <Header />
+            <div className='text-input-container'>
+                <input placeholder="Enter Code" 
+                onChange={(event) => {
+                    const uppercaseValue = event.target.value.toUpperCase();
+                    setCode(uppercaseValue);
+                }}
+                className='text-input'
+                />
+            </div>
+            <div className="joinpage-buttons">
+                <button  onClick={() => {joinGame()}} className='default-button'>
+                    Join Game
+                </button>
+                <button className='default-button'>
+                    <Link to={"/home"} className="link-button">
+                        Back
+                    </Link>
+                </button>
+            </div>
         </div>
     )
 }
