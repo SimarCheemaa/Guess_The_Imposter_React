@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Lobby({socket, code, players, setPlayers, name}) {
     const [ready, setReady] = useState(false);
+    const navigate = useNavigate();
 
     const playersList = players.map((player, index) => {
         return (
             <li key={index}>
-                <span>{player}</span>
+                <span>{player.name} : {player.readyStatus ? "Ready" : "Not Ready"}</span>
             </li>
         )
     });
@@ -19,15 +20,21 @@ export default function Lobby({socket, code, players, setPlayers, name}) {
 
     useEffect(() => {
         socket.on("join-success", (data) => {
-            setPlayers([...data.players])
+            setPlayers([...data.players]);
         });
     }, []);
 
     useEffect(() => {
         socket.on("all-ready", (data) => {
-            alert(data);
+            navigate('/game');
         })
       }, []);
+
+    useEffect(() => {
+        socket.on("player-status", (data) => {
+            setPlayers([...data.players]);
+        })
+    })
 
     return (
         <>

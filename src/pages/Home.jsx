@@ -15,7 +15,7 @@ export default function Home({socket, setCode, code, name, setName, setPlayers})
     const createGame = () => {
         if (name != "") {
             socket.emit("create", {name: name});
-            setPlayers([name]);
+            // setPlayers([name]);
         }
     }
 
