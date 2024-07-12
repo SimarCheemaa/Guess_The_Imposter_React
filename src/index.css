@@ -14,29 +14,41 @@
 
 body {
   margin: 0;
-  display: flex;
+  /* display: flex; */
   min-width: 320px;
   min-height: 100vh;
   background: #161c22;
+  background-image: url("./assets/background2 copy.png");
+  background-size: cover; /* This ensures the image covers the entire container */
+  background-position: center; /* This centers the image within the container */
+  background-repeat: no-repeat;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .header {
   font-family: Marker Felt;
   font-weight: 800;
-  font-size: 72px;
-  color: #00FF00; /* Adjust the color to match the gradient */
-  background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 90px;
+  color: #ffffff; /* Adjust the color to match the gradient */
+  /* background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%); */
+  /* background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
   margin-top: 5rem;
+  -webkit-text-stroke: 2px #000000;
 }
 
 .code {
   font-family: Marker Felt, fantasy;
   font-weight: 800;
-  font-size: 72px;
+  font-size: 90px;
   color: #ffffff;
-  margin-top: 5rem;
+  margin-top: 1rem;
+  -webkit-text-stroke: 2px #000000;
 }
 
 .main-body {
@@ -99,11 +111,11 @@ button:hover {
 .default-button .link-button {
   text-decoration: none;
   color: inherit;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* width: 100%; */
+  /* height: 100%; */
 }
 
 .ready {
@@ -128,26 +140,49 @@ button:hover {
 
 .players-title {
   font-weight: 600;
-  font-size: 36px;
+  font-size: 50px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin-top: 5rem;
-  color: #cdcdcd;
+  color: #ffffff;
+  -webkit-text-stroke: 1px #000000;
 }
 
 .player-list {
   list-style-type: upper-roman;
   list-style-position: inside;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  -webkit-text-stroke: 1px #000000;
+  list-style-type: none;
 }
 
 .player-list li {
   margin-bottom: 5px;
-  font-size: 28px;
+  font-size: 40px;
   font-weight: bold; /* Makes the font bolder */
   color: #cdcdcd; /* Adds a slight color to the text */
   padding-right: 20px; /* Adds some padding for better alignment */
   margin: 2rem;
 }
 
+.game-page {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin: 0;
+}
 
+.players-section {
 
+  margin-right: 0; /* Pushes div2 and div3 to the right */
+}
+
+.game-section {
+  background-color: green;
+  flex: 1; /* Takes up the remaining space */
+  text-align: center; /* Optional: Centers the content of div2 */
+}
+
+.chat-section {
+  background-color: purple;
+  margin-left: 0;
+}

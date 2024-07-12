@@ -27,7 +27,8 @@ export default function Home({socket, setCode, code, name, setName, setPlayers})
         </div>
     )
 }
-
+//Add functionality to rejoin game using code and name if they match and 
+//then ability to leave game where if socket disconnects you remove it from game
 function Body({name, setName, createGame, code}) {
     return (
         <div className='main-body'>
@@ -44,7 +45,6 @@ function Body({name, setName, createGame, code}) {
             <div className='homepage-buttons'>
                 <button onClick={() => {
                     createGame();
-
                     }} className='default-button'>
                     {name !== "" ? <Link to="/lobby" className="link-button">Create Game</Link> : "Create Game"}
                 </button>
